@@ -25,7 +25,6 @@ if debug:
             print(f"\n{i} is in the list more than once!")
             print(f"{i} is in the list {matches} times!\n")
 solution_word = choice(solutions)
-solution_word = "parks"
 print("I have a word!\n")
 
 #gameplay
