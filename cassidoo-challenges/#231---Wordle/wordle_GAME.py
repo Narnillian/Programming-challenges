@@ -11,12 +11,19 @@ else: debug = False
 
 #setup
 victory = False
-solutions = ["fudge", "party", "parks", "wordl", "wrdle", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply"]
+solutions = ["fudge", "party", "parks", "wordl", "wrdle", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth"]
 if debug:
     for i in solutions:
+        matches = 0
         if len(i) != 5:
             print(f"\n{i} has more than 5 letters!")
             print(f"{i} has more than 5 letters!\n")
+        for j in solutions:
+            if i == j:
+                matches += 1
+        if matches > 1:
+            print(f"\n{i} is in the list more than once!")
+            print(f"{i} is in the list {matches} times!\n")
 solution_word = choice(solutions)
 print("I have a word!")
 
