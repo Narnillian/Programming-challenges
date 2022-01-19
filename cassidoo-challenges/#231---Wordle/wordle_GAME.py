@@ -40,11 +40,11 @@ for i in range(6):
     for letter in range(5):
         if guessed_word[letter] == solution_word[letter]:
             print("🟩", end="")
-            guessed_word = guessed_word.replace(guessed_word[letter], ' ')
+            guessed_word = guessed_word.replace(guessed_word[letter], ' ') #i thank my friend who goes by Onmert for this line
             correct += 1
         elif guessed_word[letter] in solution_word:
             print("🟨", end="")
-            guessed_word = guessed_word.replace(guessed_word[letter], ' ')
+            guessed_word = guessed_word.replace(guessed_word[letter], ' ') #i thank my friend who goes by Onmert for this line
         else:
             print("⬜", end="")
     print()
@@ -62,4 +62,4 @@ else:
     print("After 6 turns, you could not find the word!")
     print("Fortunately for you, I have no way of stopping you from playing again.")
     print("It will (probably) be a different word though.")
-print(f"The word this round was: {solution_word}")
+print(f"\nThe word this round was: {solution_word}")
