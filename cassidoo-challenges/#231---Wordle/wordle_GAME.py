@@ -11,7 +11,7 @@ else: debug = False
 
 #setup
 victory = False
-solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might", "every", "match", "green", "sound", "could", "trier", "tinkle", "dongle", ]
+solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might", "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power"]
 if debug:
     for i in solutions:
         matches = 0
@@ -40,9 +40,11 @@ for i in range(6):
     for letter in range(5):
         if guessed_word[letter] == solution_word[letter]:
             print("🟩", end="")
+            guessed_word = guessed_word.replace(guessed_word[letter], ' ')
             correct += 1
         elif guessed_word[letter] in solution_word:
             print("🟨", end="")
+            guessed_word = guessed_word.replace(guessed_word[letter], ' ')
         else:
             print("⬜", end="")
     print()
