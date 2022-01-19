@@ -9,7 +9,7 @@ if len(argv) > 1:
     debug = argv[1]
 else: debug = False
 
-#setup
+#setupparks
 victory = False
 solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might", "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power"]
 if debug:
@@ -25,6 +25,7 @@ if debug:
             print(f"\n{i} is in the list more than once!")
             print(f"{i} is in the list {matches} times!\n")
 solution_word = choice(solutions)
+solution_word = "parks"
 print("I have a word!\n")
 
 #gameplay
@@ -62,4 +63,4 @@ else:
     print("After 6 turns, you could not find the word!")
     print("Fortunately for you, I have no way of stopping you from playing again.")
     print("It will (probably) be a different word though.")
-print(f"The word this round  in header, word is now shown after win or losswas: {solution_word}")
+print(f"The word this round was: {solution_word}")
