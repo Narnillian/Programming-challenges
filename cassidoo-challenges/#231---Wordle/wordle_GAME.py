@@ -1,5 +1,6 @@
 #Written in its entirety on January 19, 2022
 #Written by Narnillian, in response to cassidoo's "Interview question of the week" from Newsletter #231, Jan. 16 2022
+#All code was written by Narnillian, except for where explicitly stated
 
 from random import choice
 from sys import argv
@@ -11,7 +12,7 @@ else: debug = False
 
 #setupparks
 victory = False
-solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might", "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power"]
+solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply", "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might", "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power", "robot"]
 if debug:
     for i in solutions:
         matches = 0
@@ -30,6 +31,7 @@ print("I have a word!\n")
 #gameplay
 for i in range(6):
     correct = 0
+    copy_of_solution = solution_word
     print(f"This is turn {i+1}/6")
     while True:
         guessed_word = input("Please guess my word: ")
@@ -38,23 +40,24 @@ for i in range(6):
         print("Guess must be 5 letters!\n")
     guessed_word = guessed_word.lower()
     for letter in range(5):
-        if guessed_word[letter] == solution_word[letter]:
+        if guessed_word[letter] == copy_of_solution[letter]:
             print("🟩", end="")
-            guessed_word = guessed_word.replace(guessed_word[letter], ' ') #i thank my friend who goes by Onmert for this line
+            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ', 1) #i thank you my friend, Onmert, for this line
             correct += 1
-        elif guessed_word[letter] in solution_word:
+        elif guessed_word[letter] in copy_of_solution:
             print("🟨", end="")
-            guessed_word = guessed_word.replace(guessed_word[letter], ' ') #i thank my friend who goes by Onmert for this line
+            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ') #i thank you my friend, Onmert, for this line
         else:
             print("⬜", end="")
     print()
+    if debug:
+        print(f"\"{copy_of_solution}\"")
     if correct == 5:
         victory = True
         break
     #just for dev process:
     if debug:
-        if not victory:
-            print(solution_word)
+        print(solution_word)
     print("")
 if victory:
     print("\nCorrect! You have guessed the word!")
@@ -62,4 +65,4 @@ else:
     print("After 6 turns, you could not find the word!")
     print("Fortunately for you, I have no way of stopping you from playing again.")
     print("It will (probably) be a different word though.")
-print(f"\nThe word this round was: {solution_word}")
+print(f"The word this round was: {solution_word}")
