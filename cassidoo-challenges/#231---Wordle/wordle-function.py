@@ -17,11 +17,11 @@ def wordleGuess(guess, solution=None):
     for letter in range(5):
         if guessed_word[letter] == copy_of_solution[letter]:
             print("🟩", end="")
-            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ', 1) #i thank you my friend, Onmert, for this line
+            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ', 1) #i thank you my friend, onmert, for this line
             continue
         elif guessed_word[letter] in copy_of_solution:
             print("🟨", end="")
-            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ', 1) #i thank you my friend, Onmert, for this line
+            copy_of_solution = copy_of_solution.replace(guessed_word[letter], ' ', 1) #i thank you my friend, onmert, for this line
             continue
         else:
             print("⬜", end="")
