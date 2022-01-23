@@ -1,7 +1,7 @@
 # About
 The assignment was to just make a function to tell you the result of your guess. I made the whole game, and then copied and pasted some of it into another file with just the function.
 
-Almost the entire game was finished on January 19, 2022, with a tiny adjustment on the morning of the 20. (This adjustment fixed reporting double letters [i.e. "apple" --> "parks" and vice versa] when the word was not entirely correct)
+Almost the entire game was finished on January 19, 2022, with a tiny adjustment on the morning of January 20. (This adjustment fixed reporting double letters [i.e. "apple" --> "parks" and vice versa] when the word was not entirely correct). I also edited on January 22 to make sure all letters are in the standard English 26 character alphabet.
 
 You can play the original Wordle [here](https://www.powerlanguage.co.uk/wordle/), once per day: https://www.powerlanguage.co.uk/wordle/.
 
