@@ -1,4 +1,4 @@
-#Written in its entirety on January 19, 2022, with a tiny bit of editing on the 20th
+#Written in its entirety on January 19, 2022, with a tiny bit of editing on the 20th and the addition of a character checker (probably unneccesary) on the 22nd
 #Written by Narnillian, in response to cassidoo's "Interview question of the week" from Newsletter #231, Jan. 16 2022
 #All code was written by Narnillian, except for where explicitly stated
 
@@ -12,10 +12,12 @@ else: debug = False
 
 #setup
 victory = False
+alphabet = "abcdefghijklmnopqrstuvwxyz"
 solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply",
                 "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might",
-                "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power", "robot", "again"]
-if debug:
+                "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power", "robot", "again", "space",
+                "pixel", "phone", "bowls", "range"]
+if debug: #make sure all solutions are good
     for i in solutions:
         matches = 0
         if len(i) != 5:
@@ -35,11 +37,19 @@ for i in range(6):
     correct = 0
     copy_of_solution = solution_word
     print(f"This is turn {i+1}/6")
-    while True:
+    while True: #check guess is 5 letters
         guessed_word = input("Please guess my word: ")
-        if len(guessed_word) == 5:
+        for letter in guessed_word:
+            if letter not in alphabet:
+                print("Please make sure all the letters in your guess are in the 26 letter English alphabet\n")
+                bad_letters = True
+                continue
+        if bad_letters:
+            pass
+        elif len(guessed_word) == 5:
             break
-        print("Guess must be 5 letters!\n")
+        else:
+            print("Guess must be 5 letters!\n")
     guessed_word = guessed_word.lower()
     for letter in range(5):
         if guessed_word[letter] == copy_of_solution[letter]:
