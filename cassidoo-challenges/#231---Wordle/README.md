@@ -10,3 +10,9 @@ You can play the original Wordle [here](https://www.powerlanguage.co.uk/wordle/)
 My full game script has couple of notable differences from the original Wordle. Firstly, I can't stop you from playing more than once per day. Also, since I can't interact with or measure time, there's a random word from a list each time you play, even if the two rounds are right after each other. The final difference that I can think of, in the official Wordle, you can only guess real words from the list. My version lets you guess any combination of 5 letters.
 
 The file with just the function is much more simple. You run `python3 -i [wordle-function.py]` to define the function and leave the Python interface open. Then, you simply call the function with `wordleGuess(["guess"],["solution"])`. It uses basically the same code as the full game script, so everything that applies there applies to this one too.
+
+&nbsp;  
+&nbsp;  
+
+## I was mentioned in the newsletter!
+![image](https://user-images.githubusercontent.com/94580999/151125291-948be757-536e-48f4-b5ad-ad6214ff2c15.png)
