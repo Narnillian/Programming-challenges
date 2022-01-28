@@ -35,5 +35,6 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply",
                 "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might",
                 "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power", "robot", "again", "space",
-                "pixel", "phone", "bowls", "range"]
+                "pixel", "phone", "bowls", "range", "super", "light", "inner", "outer", "inter", "false", "check", "added",
+                "coder", "goods", "homes", "edits", "packs", "speak", "tests", "bites"]
 solution_word = choice(solutions)
