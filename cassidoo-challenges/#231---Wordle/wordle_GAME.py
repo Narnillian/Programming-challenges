@@ -72,6 +72,7 @@ for i in range(6):
                 highlight[alphabet.index(guessed_word[letter])] = 43 #replace value at index of letter with color code for yellow highlight
             print("🟨", end="")
         else:
+            highlight[alphabet.index(guessed_word[letter])] = "30;47" #replace value at index of letter with color code for black text, white highlight
             print("⬜", end="")
     print()
     if debug:
@@ -84,13 +85,15 @@ for i in range(6):
         print(solution_word)
     print()
     for i in range(26):
-        print(f"\033[{highlight[i]}m{alphabet[i]}", end="") #print each letter with the correct highlighting
-    print()
-    print("\033[49m")
+        #print each letter with the correct highlighting
+        print(f"\033[{highlight[i]}m", end="")
+        print(f"{alphabet[i]}", end="")
+        print("\033[39;49m", end="")
+    print("\n")
 if victory:
     print("\nCorrect! You have guessed the word!")
 else:
     print("After 6 turns, you could not find the word!")
     print("Fortunately for you, I have no way of stopping you from playing again.")
     print("It will (probably) be a different word though.")
-print(f"The word this round was: \"{solution_word}\"")
+print(f"\nThe word this round was: \"{solution_word}\"")
