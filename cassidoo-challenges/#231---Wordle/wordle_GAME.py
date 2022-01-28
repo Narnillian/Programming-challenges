@@ -21,7 +21,8 @@ for i in range(26):
 solutions = ["fudge", "party", "parks", "guess", "solve", "print", "debug", "rules", "great", "thing", "write", "reply",
                 "these", "stuff", "looks", "jocks", "jumbo", "fuzzy", "pizza", "baker", "cabin", "earth", "words", "might",
                 "every", "match", "green", "sound", "could", "trier", "peppy", "apple", "power", "robot", "again", "space",
-                "pixel", "phone", "bowls", "range", "super", "light", "inner", "outer", "inter", "false", "check", "added"]
+                "pixel", "phone", "bowls", "range", "super", "light", "inner", "outer", "inter", "false", "check", "added",
+                "coder", "goods", "homes", "edits", "packs", "speak", "tests", "bites"]
 if debug: #make sure all solutions are good
     for i in solutions:
         matches = 0
