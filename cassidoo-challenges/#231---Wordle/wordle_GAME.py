@@ -1,5 +1,6 @@
 #Written in its entirety on January 19, 2022, with a tiny bit of editing on the 20th and the addition of a character checker (probably unneccesary) on the 22nd
 #Also, on the 24th, added a list to show which characters have been used already and fixed the character checker -- before it would break the game
+#On 28th -- added highlighting for letters used, but not in the word, and updated system for display of letter information
 #There were continual updates to the word list throughout
 #Written by Narnillian, in response to cassidoo's "Interview question of the week" from Newsletter #231, Jan. 16 2022
 #All code was written by Narnillian, except for where explicitly stated
