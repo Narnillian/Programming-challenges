@@ -51,27 +51,6 @@ int main(int argc, char** argv) {
     }
 
     
-/*
-    for (int word_letter = 0; word_letter < given_word.size(); word_letter++) {
-
-        if (given_word[word_letter] == previous_letter) {
-            cout << "select\n";
-
-        } else {
-
-            for (row = 0; row < 3; row++) {
-                for (row_letter = 0; row_letter < strlen(keyboard_rows[row]); row_letter++) {
-                    if (keyboard_rows[row][row_letter] == given_word[word_letter]) {
-                        //if row-
-                    }
-                }
-                
-            } 
-
-        }
-
-    }
-*/
 
     cout << "\033[D\033[D  \n";
     
