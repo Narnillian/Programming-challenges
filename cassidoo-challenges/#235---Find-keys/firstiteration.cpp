@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    char top_row[] = "qwertyuiop"; //10 letters
+    char home_row[] = "asdfghjkl"; //9 letters
+    char bottom_row[] = "zxcvbnm"; //7 letters
+    char* keyboard_rows[] = {top_row, home_row, bottom_row};
+    char previous_letter;
+    int previous_row = 0;
+    int previous_keyboard_letter = 0;
+    string direction;
+
+    string given_word = "dessert";
+    if (argv[1]) {
+        given_word = argv[1];
+    }
+
+
+    for (auto &&word_letter : given_word) {
+
+        for (int row = 0; row < 3; row++) {
+            for (auto row_letter = 0; row_letter < strlen(keyboard_rows[row]); row_letter++) {
+                if (keyboard_rows[row][row_letter] == word_letter) {
+                    if (row - previous_row < 0) { direction = "up"; }
+                    else { direction = "down"; }
+                    for (int i = 0; i < abs(row - previous_row); i++) {
+                        cout << direction << ", ";
+                    }
+
+                    if (row_letter - previous_keyboard_letter < 0) { direction = "left"; }
+                    else { direction = "right"; }
+                    for (int i = 0; i < abs(row_letter - previous_keyboard_letter); i++) {
+                        cout << direction << ", ";
+                    }
+
+                    cout << "select, ";
+
+                    previous_letter = word_letter;
+                    previous_row = row;
+                    previous_keyboard_letter = row_letter;
+                    continue;
+                }
+            }
+            
+        }
+
+    previous_letter = given_word[word_letter];
+    }
+
+    
+/*
+    for (int word_letter = 0; word_letter < given_word.size(); word_letter++) {
+
+        if (given_word[word_letter] == previous_letter) {
+            cout << "select\n";
+
+        } else {
+
+            for (row = 0; row < 3; row++) {
+                for (row_letter = 0; row_letter < strlen(keyboard_rows[row]); row_letter++) {
+                    if (keyboard_rows[row][row_letter] == given_word[word_letter]) {
+                        //if row-
+                    }
+                }
+                
+            } 
+
+        }
+
+    }
+*/
+
+    cout << "\033[D\033[D  \n";
+    
+
+
+    return 0;
+}
