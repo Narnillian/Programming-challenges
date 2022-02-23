@@ -22,20 +22,21 @@ int main(int argc, char** argv) {
 
     for (auto &&word_letter : given_word) {
         found = false;
+        //cout << "\nrow:" << previous_row << "\n";
         if (word_letter == previous_letter) {
-            cout << "\nsamechar"; //this is for reference
+            //cout << "\nsamechar"; //this is for reference
             cout << "select, ";
             continue;
         }
         else { rows_moved = 0; }
         if (previous_row == keyboard_rows[0]) {
-            cout << "\ntop row"; //this is for reference
+            //cout << "\ntop row"; //this is for reference
             for (auto &&row : keyboard_rows) {
                 for (row_letter = 0; row_letter < row.length(); row_letter++) {
                     if (row[row_letter] == word_letter) {
                         //give directions
-                        cout << "  {" << row_letter << "}  ";
-                        cout << "  {" << previous_keyboard_letter << "}  ";
+                        //cout << "  {" << row_letter << "}  ";
+                        //cout << "  {" << previous_keyboard_letter << "}  ";
                         if (row_letter - previous_keyboard_letter < 0) { direction = "left"; } else { direction = "right"; }
                         for (int i = 0; i < abs(row_letter - previous_keyboard_letter); i++) {
                             cout << direction << ", ";
@@ -53,10 +54,13 @@ int main(int argc, char** argv) {
                 cout << "down, ";
                 rows_moved++;
             }
+            previous_row = keyboard_rows[rows_moved];
         } else if (previous_row == keyboard_rows[1]) {
-            cout << "\nhome row";
+            //cout << "\nhome row";
             for (row_letter = 0; row_letter < home_row.length(); row_letter++) {
                 if (home_row[row_letter] == word_letter) {
+                    //cout << "  {" << row_letter << "}  ";
+                    //cout << "  {" << previous_keyboard_letter << "}  ";
                     if (row_letter - previous_keyboard_letter < 0) { direction = "left"; } else { direction = "right"; }
                     for (int i = 0; i < abs(row_letter - previous_keyboard_letter); i++) {
                         cout << direction << ", ";
@@ -72,8 +76,8 @@ int main(int argc, char** argv) {
             if (!found) {
                 for (row_letter = 0; row_letter < top_row.length(); row_letter++) {
                     if (top_row[row_letter] == word_letter) {
-                        cout << "  {" << row_letter << "}  ";
-                        cout << "  {" << previous_keyboard_letter << "}  ";
+                        //cout << "  {" << row_letter << "}  ";
+                        //cout << "  {" << previous_keyboard_letter << "}  ";
                         cout << "up, ";
                         if (row_letter - previous_keyboard_letter < 0) { direction = "left"; } else { direction = "right"; }
                         for (int i = 0; i < abs(row_letter - previous_keyboard_letter); i++) {
@@ -91,6 +95,9 @@ int main(int argc, char** argv) {
             if (!found) {
             for (row_letter = 0; row_letter < bottom_row.length(); row_letter++) {
                 if (bottom_row[row_letter] == word_letter) {
+                    //cout << "  {" << row_letter << "}  ";
+                    //cout << "  {" << previous_keyboard_letter << "}  ";
+                    //cout << " || hi || ";
                     cout << "down, ";
                     if (row_letter - previous_keyboard_letter < 0) { direction = "left"; } else { direction = "right"; }
                     for (int i = 0; i < abs(row_letter - previous_keyboard_letter); i++) {
@@ -105,7 +112,7 @@ int main(int argc, char** argv) {
             }
             }
         } else {
-            cout << "\nbottom row";
+            //cout << "\nbottom row";
             for (auto &&row : reverse_keyboard_rows) {
                 for (row_letter = 0; row_letter < row.length(); row_letter++) {
                     if (row[row_letter] == word_letter) {
@@ -127,8 +134,9 @@ int main(int argc, char** argv) {
                 cout << "up, ";
                 rows_moved++;
             }
+            previous_row = keyboard_rows[rows_moved];
+
         }
-        previous_row = keyboard_rows[rows_moved];
         previous_keyboard_letter = row_letter;
     }
 
