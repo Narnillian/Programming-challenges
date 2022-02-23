@@ -1,13 +1,12 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
 
 
 int main(int argc, char** argv) {
-    char top_row[] = "qwertyuiop"; //10 letters
-    char home_row[] = "asdfghjkl"; //9 letters
-    char bottom_row[] = "zxcvbnm"; //7 letters
-    char* keyboard_rows[] = {top_row, home_row, bottom_row};
+    string top_row = "qwertyuiop"; //10 letters
+    string home_row = "asdfghjkl"; //9 letters
+    string bottom_row = "zxcvbnm"; //7 letters
+    string keyboard_rows[] = {top_row, home_row, bottom_row};
     char previous_letter;
     int previous_row = 0;
     int previous_keyboard_letter = 0;
@@ -22,7 +21,7 @@ int main(int argc, char** argv) {
     for (auto &&word_letter : given_word) {
 
         for (int row = 0; row < 3; row++) {
-            for (auto row_letter = 0; row_letter < strlen(keyboard_rows[row]); row_letter++) {
+            for (auto row_letter = 0; row_letter < keyboard_rows[row].length(); row_letter++) {
                 if (keyboard_rows[row][row_letter] == word_letter) {
                     if (row - previous_row < 0) { direction = "up"; }
                     else { direction = "down"; }

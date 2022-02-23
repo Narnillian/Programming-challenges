@@ -8,12 +8,12 @@ int main(int argc, char** argv) {
     string bottom_row = "zxcvbnm"; //7 letters
     string keyboard_rows[] = {top_row, home_row, bottom_row};
     string reverse_keyboard_rows[] = {bottom_row, home_row, top_row};
-    char previous_letter;
+    char previous_letter = '*';
     string previous_row = keyboard_rows[0];
     int previous_keyboard_letter = 0;
     int rows_moved = 0;
     int row_letter;
-    bool found;
+    bool found = false;
     string direction;
 
     string given_word = "dessert";
