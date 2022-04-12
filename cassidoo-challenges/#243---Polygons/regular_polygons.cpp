@@ -10,8 +10,8 @@ int main(int argc, char** argv) {
     bool findDiags = true;
     string argument;
     float intAngSum = 0;
-    float intAngMeasure = 0;
-    float extAngMeasure = 0;
+    float intTheta = 0;
+    float extTheta = 0;
     float diagonals = 0;
 
     if (argc > 2) {
@@ -33,13 +33,13 @@ int main(int argc, char** argv) {
                 //will continue with the code below -- i dont like having it all in this block
             }
             
-            if (argument == "intanglesum" || argument == "ias") {
+            if (argument == "intanglesum" || argument == "interioranglesum" || argument == "ias") {
                 //cout << "ias\n";
                 findIAS = true;
-            } else if (argument == "intanglemeasure" || argument == "iam") {
+            } else if (argument == "intanglemeasure" || argument == "interioranglemeasure" || argument == "iam") {
                 //cout << "iam\n";
                 findIAM = true;
-            } else if (argument == "extanglemeasure" || argument == "eam") {
+            } else if (argument == "extanglemeasure" || argument == "exterioranglemeasure" || argument == "eam") {
                 //cout << "eam\n";
                 findEAM = true;
             } else if (argument == "diagonals" || argument == "diags") {
@@ -65,7 +65,6 @@ int main(int argc, char** argv) {
         cout << "Please make sure that you give a valid number of sides for a polygon\n";
         return 0;
     }
-    //cout << "sides: " << sides << "\n";
 
 
     //get interior angle sum of regular polygon with given number of sides
@@ -77,15 +76,15 @@ int main(int argc, char** argv) {
 
     //get measure of one interior angle
     if (findIAM) {
-        intAngMeasure = intAngSum/sides;
-        cout << "Measure of one interior angle of a regular polygon with " << sides << " sides:\033[80G" << intAngMeasure << "\n";
+        intTheta = intAngSum/sides;
+        cout << "Measure of one interior angle of a regular polygon with " << sides << " sides:\033[80G" << intTheta << "\n";
     }
 
     
     //get measure of one exterior angle
     if (findEAM) {
-        extAngMeasure = 360/sides;
-        cout << "Measure of one exterior angle of a regular polygon with " << sides << " sides:\033[80G" << extAngMeasure << "\n";
+        extTheta = 360/sides;
+        cout << "Measure of one exterior angle of a regular polygon with " << sides << " sides:\033[80G" << extTheta << "\n";
     }
 
 
