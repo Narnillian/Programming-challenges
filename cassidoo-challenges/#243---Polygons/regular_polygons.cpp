@@ -14,6 +14,10 @@ int main(int argc, char** argv) {
     float extTheta = 0;
     float diagonals = 0;
 
+    if (argc == 1) {
+        cout << "Please make sure you specify the number of sides the polygon has.\n";
+        return 1;
+    }
     if (argc > 2) {
         findIAS = false;
         findIAM = false;
