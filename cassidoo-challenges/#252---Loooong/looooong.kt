@@ -33,8 +33,14 @@ fun main(argv: Array<String>) {
         print("${underline}Please enter a string to multiply:${reset} ")
         string = readln()
         print("${underline}Please enter a number to multiply each vowel by:${reset} ")
-        factor = readln().toInt()
+        while (true) {
+            try { factor = readln().toInt(); break }
+            catch(e: NumberFormatException) {
+                print("${underline}Please enter a number to multiply each vowel by:${reset} ")
+            }
+        }
     }
     println("\nResult:")
     println("${bold}${multiply(string, factor)}${reset}")
 }
+    
