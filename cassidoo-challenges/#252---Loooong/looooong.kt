@@ -1,6 +1,9 @@
-val vowels = "aeiou"
+val underline = "\u001b[4m"
+val bold = "\u001b[1m"
+val reset = "\u001b[0m"
 
 fun multiply(string: String, factor: Int): String {
+    val vowels = "aeiou"
     var result = ""
     for (letter in string) {
         if (letter in vowels) {
@@ -27,10 +30,11 @@ fun main(argv: Array<String>) {
             } else string += i.plus(" ")
         }
     } else {
-        print("Please enter a string to multiply: ")
+        print("${underline}Please enter a string to multiply:${reset} ")
         string = readln()
-        print("Please enter a number to multiply each vowel by: ")
+        print("${underline}Please enter a number to multiply each vowel by:${reset} ")
         factor = readln().toInt()
     }
-    println(multiply(string, factor))
+    println("\nResult:")
+    println("${bold}${multiply(string, factor)}${reset}")
 }
