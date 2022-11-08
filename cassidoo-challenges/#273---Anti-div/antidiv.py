@@ -5,8 +5,8 @@
 from sys import flags as callflags
 from sys import argv
 
-def isAD(k,n):
-    return n%k==k/2 if k%2==0 else n%k==(k-1)/2 or n%k==(k+1)/2
+#def isAD(k,n):
+#    return n%k==k/2 if k%2==0 else n%k==(k-1)/2 or n%k==(k+1)/2
 
 def antidivisor(n):
     result = []
