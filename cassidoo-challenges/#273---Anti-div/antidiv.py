@@ -9,13 +9,10 @@ def isAD(k,n):
     return n%k==k/2 if k%2==0 else n%k==(k-1)/2 or n%k==(k+1)/2
 
 def antidivisor(n):
-    print("[",end="")
+    result = []
     for k in range(2,n):
-        if isAD(k,n):
-            print(k,end="")
-            print(",",end="")
-    print("\b]") #hacky solution to get rid of extra comma because i can't math
-
+        if n%k==k/2 if k%2==0 else n%k==(k-1)/2 or n%k==(k+1)/2: result.append(k)
+    print(result)
 
 # i learned something new!
 if callflags.inspect == 0:
